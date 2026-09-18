@@ -1,0 +1,9 @@
+ID_Transaksi,Tanggal_Transaksi,Kategori_Produk,Jumlah_Terjual,Total_Pendapatan,Status_Transaksi,Catatan_Internal
+101,2024-01-15," ELEKTRONIK ",5,15000000,Selesai,Sistem V1
+102,2024-01-16,elektronik,2,6000000,Selesai,
+102,2024-01-16,elektronik,2,6000000,Selesai,
+103,2024-01-17,Pakaian,10,2000000,Proses,
+104,,Elektronik,2,3000000,Selesai,Sistem V2
+105,2024-01-19,"pakaian ",3,600000,Selesai,
+106,2024-01-20,Elektronik,1,1500000000,Selesai,
+107,2024-01-21,Makanan,4,200000,,Sistem V2

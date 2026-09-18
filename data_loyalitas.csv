@@ -1,0 +1,9 @@
+ID_Pelanggan,Nama_Pelanggan,Tanggal_Bergabung,Tingkat_Member,Poin_Loyalitas,Kode_Referral_Lama
+CUST-01," Budi Santoso ",2023-01-10,Gold,1250,REF123
+CUST-02,BUDI SANTOSO,2023-01-10,Gold,1250,
+CUST-02,BUDI SANTOSO,2023-01-10,Gold,1250,
+CUST-03,Siti Rahma,2023-02-15,silver,450,
+CUST-04,siti rahma,2023-02-15,Silver,450,
+CUST-05,Ahmad Dahlan,,Bronze,,
+CUST-06,Dewi Lestari,2023-03-12,Bronze,-5000,REF126
+CUST-07,"Eko Prasetyo ",2023-04-05,Gold_VIP,800,REF127
