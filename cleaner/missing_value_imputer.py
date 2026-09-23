@@ -13,13 +13,22 @@ class MissingValueImputer(BaseCleaner):
             if config.missing_strategy == MissingStrategy.NONE:
                 continue
 
-            n_missing = df[config.col_name].isna().sum()
+            n_missing = int(df[config.col_name].isna().sum())
 
             if n_missing == 0:
                 continue
 
             col = config.col_name
             strategy = config.missing_strategy
+
+            # MEAN dan MEDIAN hanya masuk akal untuk kolom numerik. MEAN adalah
+            # default ColumnConfig, jadi kolom teks yang lupa diatur strateginya
+            # akan melempar TypeError tanpa penjagaan ini.
+            if strategy in (
+                MissingStrategy.MEAN,
+                MissingStrategy.MEDIAN,
+            ) and not pd.api.types.is_numeric_dtype(df[col]):
+                continue
 
             if strategy == MissingStrategy.DROP:
                 df = df.dropna(subset=[col])

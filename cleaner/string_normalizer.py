@@ -12,11 +12,8 @@ class StringNormalizer(BaseCleaner):
             if not pd.api.types.is_string_dtype(df[config.col_name]):
                 continue
 
-            if config.lower_case and config.title_case:
-                raise ValueError(
-                    f"Kolom '{config.col_name}': pilih salah satu antara "
-                    f"lower_case atau title_case, tidak boleh keduanya."
-                )
+            # konflik lower_case/title_case sudah divalidasi di ColumnConfig,
+            # sehingga error muncul saat config dibuat, bukan saat kolom diproses.
             # Strip whitespace 
             if config.strip_string:
                 df[config.col_name] = df[config.col_name].str.strip()

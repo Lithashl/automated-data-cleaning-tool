@@ -15,7 +15,7 @@ class AllowedValuesFilter(BaseCleaner):
 
             mask = df[config.col_name].isin(config.allowed_values)
             was_not_na = df[config.col_name].notna()
-            n_invalid = (was_not_na & ~mask).sum()
+            n_invalid = int((was_not_na & ~mask).sum())
 
             df[config.col_name] = df[config.col_name].where(mask, np.nan)
 

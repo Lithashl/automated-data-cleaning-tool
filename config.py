@@ -48,6 +48,17 @@ class ColumnConfig(BaseModel):
 
         return self
 
+    # memvalidasi kondisi dimana user memilih lower_case dan title_case sekaligus.
+    # hanya boleh salah satu, agar hasil normalisasi teks tidak ambigu.
+    @model_validator(mode="after")
+    def check_case_conflict(self) -> "ColumnConfig":
+        if self.lower_case and self.title_case:
+            raise ValueError(
+                f"Column {self.col_name}: pilih salah satu antara lower_case atau title_case"
+            )
+
+        return self
+
 # Class untuk menampung aturan pembersihan di level global (dataframe)
 class CleaningConfig(BaseModel):
     # apakah ingin menghapus duplikasi data

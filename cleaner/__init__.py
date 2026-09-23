@@ -32,7 +32,7 @@ class DataCleaner:
 
         flows = [flow(self.config) for flow in (flows or self.DEFAULT_FLOWS)]
 
-        df_result = data_raw
+        df_result = data_raw.copy()
         for flow in flows:
             df_result = flow.implement(df_result, report)
 
